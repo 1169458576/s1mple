@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.bezier.BezierStartActivity" />
+        <activity android:name=".ui.drawer.DrawerStartActivity" />
+        <activity android:name=".ui.bezier.SimpleBezierActivity" />
+        <activity android:name=".ui.bezier.AdhesionBezierActivity"></activity>
     </application>
 
 </manifest>
