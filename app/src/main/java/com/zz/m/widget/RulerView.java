@@ -136,7 +136,6 @@ public class RulerView extends View implements GestureDetector.OnGestureListener
                 Message msg=new Message();
                 msg.obj=getCurrentValue();
                 handler.sendMessageDelayed(msg,200);
-                Log.d(TAG,"scroll_end: "+startX+" ,当前值："+(minValue+(mWidth/2-startX)/perWidth));
                 long upTime = new Date().getTime();
                 if(upTime -downTime<=500){
                     performClick();
