@@ -34,11 +34,11 @@ public class BezierLinearLayout extends LinearLayout{
     }
 
     public BezierLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr,0);
+        super(context, attrs, defStyleAttr);
+        init();
     }
 
-    public BezierLinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+    private void init(){
         mPaint=new Paint();
         mPaint.setColor(Color.LTGRAY);
         mPaint.setAntiAlias(true);

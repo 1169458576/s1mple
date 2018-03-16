@@ -17,29 +17,29 @@ import android.view.animation.LinearInterpolator;
 
 
 public class BezierWaveView extends View{
-    private final Path mPath;
-    private final Paint mPaint;
-    private final PointF mLeft1;
-    private final PointF mControlLeft1;
-    private final PointF mLeft2;
-    private final PointF mControlLeft2;
-    private final PointF mFirst;
-    private final PointF mControlFirst;
-    private final PointF mSecond;
-    private final PointF mControlSecond;
-    private final PointF mRight;
+    private  Path mPath;
+    private  Paint mPaint;
+    private  PointF mLeft1;
+    private  PointF mControlLeft1;
+    private  PointF mLeft2;
+    private  PointF mControlLeft2;
+    private  PointF mFirst;
+    private  PointF mControlFirst;
+    private  PointF mSecond;
+    private  PointF mControlSecond;
+    private  PointF mRight;
 
-    private final Path mPath1;
-    private final Paint mPaint1;
-    private final PointF mLeft11;
-    private final PointF mControlLeft11;
-    private final PointF mLeft21;
-    private final PointF mControlLeft21;
-    private final PointF mFirst1;
-    private final PointF mControlFirst1;
-    private final PointF mSecond1;
-    private final PointF mControlSecond1;
-    private final PointF mRight1;
+    private  Path mPath1;
+    private  Paint mPaint1;
+    private  PointF mLeft11;
+    private  PointF mControlLeft11;
+    private  PointF mLeft21;
+    private  PointF mControlLeft21;
+    private  PointF mFirst1;
+    private  PointF mControlFirst1;
+    private  PointF mSecond1;
+    private  PointF mControlSecond1;
+    private  PointF mRight1;
 
     private float mHeight;
     private float mWidth;
@@ -60,11 +60,12 @@ public class BezierWaveView extends View{
     }
 
     public BezierWaveView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr,0);
+        super(context, attrs, defStyleAttr);
+        init();
     }
 
-    public BezierWaveView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+
+    private void init(){
         mPath=new Path();
         mPaint=new Paint();
         mPaint.setColor(Color.parseColor("#FF4876FF"));
@@ -94,9 +95,7 @@ public class BezierWaveView extends View{
         mSecond1=new PointF();
         mControlSecond1=new PointF();
         mRight1=new PointF();
-
     }
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
