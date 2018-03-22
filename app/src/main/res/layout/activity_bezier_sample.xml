@@ -16,5 +16,15 @@
         android:layout_marginBottom="8dp"
         android:text="简单实现"
         />
+    <Button
+        android:id="@+id/btn_bezier_balls"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="粘连小球"
+        />
 
 </LinearLayout>

@@ -19,12 +19,16 @@ public class BezierStartActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_bezier_easy})
+    @OnClick({R.id.btn_bezier_easy,R.id.btn_bezier_balls})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.btn_bezier_easy:
                 startActivity(new Intent(BezierStartActivity.this,
                         SimpleBezierActivity.class));
+                break;
+            case R.id.btn_bezier_balls:
+                startActivity(new Intent(BezierStartActivity.this,
+                        BezierBallsActivity.class));
                 break;
         }
     }
