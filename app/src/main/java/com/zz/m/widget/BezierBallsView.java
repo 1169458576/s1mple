@@ -1,7 +1,6 @@
 package com.zz.m.widget;
 
 import android.animation.Animator;
-import android.animation.PointFEvaluator;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -15,7 +14,6 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 
 public class BezierBallsView extends View implements GestureDetector.OnGestureListener{
@@ -111,6 +109,7 @@ public class BezierBallsView extends View implements GestureDetector.OnGestureLi
         mWidth=MeasureSpec.getSize(widthMeasureSpec);
         mHeight=MeasureSpec.getSize(heightMeasureSpec);
         if(bigBallWidth==0){
+//            smallBallWidth=bigBallWidth=mHeight>mWidth?mWidth/2:mHeight/2;
             smallBallWidth=bigBallWidth=50;
             bigBallPoint.set(mWidth/2,mHeight/2);
             smallBallPoint.set(mWidth/2,mHeight/2);
@@ -139,7 +138,7 @@ public class BezierBallsView extends View implements GestureDetector.OnGestureLi
         mGestureDetector.onTouchEvent(event);
         switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
-                if(hasChanged){
+                if(!smallBallPoint.equals(startPoint.x,startPoint.y)){
                     setAlpha(0);
                 }else{
                     bigBackAnim();
@@ -158,6 +157,8 @@ public class BezierBallsView extends View implements GestureDetector.OnGestureLi
             }
             backAnimator=null;
         }
+
+
         return true;
     }
 
@@ -190,6 +191,7 @@ public class BezierBallsView extends View implements GestureDetector.OnGestureLi
                 bigBallPoint.y=y;
                 invalidate();
             }else{
+
                 smallRunAnim();
             }
         }
